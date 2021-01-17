@@ -8,6 +8,7 @@ skinparam class {
   BackgroundColor<<new>> Yellow
 }
 
+
 package 勝利条件 {
   class 幸せに生きる
 }
@@ -105,5 +106,9 @@ package 廟算八要素 {
   布団の中で3時間くらいスマホいじいじしてしまった
   end note
 }
+
+中間目的 --u[hidden]--> 勝利条件
+施策 --u[hidden]--> 中間目的
+廟算八要素 ---u[hidden]--> 施策
 
 @enduml
