@@ -1,0 +1,92 @@
+@startuml
+
+title 人生
+
+hide empty members
+skinparam class {
+  BackgroundColor<<deprecated>> Grey
+  BackgroundColor<<new>> Yellow
+}
+
+package 勝利条件 {
+  class 幸せに生きる
+}
+
+package 中間目的 {
+  class 不安がない
+  不安がない --> 幸せに生きる
+
+  class キャリアの不安がない<<ref>> extends 不安がない
+  class お金の不安がない extends 不安がない
+
+  class 他者との認識違いがない
+  他者との認識違いがない --> 幸せに生きる
+}
+
+package 施策 {
+  class 人生をプ譜に書き留める
+  note bottom: 目的がなくなっている
+
+  class 自分の考えを相手が理解しているか確認する
+  class 相手の考えを自分が理解しているか確認する
+  自分の考えを相手が理解しているか確認する --> 他者との認識違いがない
+  相手の考えを自分が理解しているか確認する --> 他者との認識違いがない
+
+  class 自分の考えを自分が理解しているか確認する
+  自分の考えを自分が理解しているか確認する --> 自己虐待をしていない
+}
+
+package 廟算八要素 {
+  class メンバー {
+   + 自分
+   + 個人事業の営業代行
+   + アサイン先正社員
+   + 友人
+   + 勉強会サークルの知り合い
+   + SNSの知り合い
+   + 趣味の知り合い
+   + 家族
+  }
+  class 予算規模 {
+   + ...
+  }
+  class 納期 {
+   + 確定申告 3/15
+   + マイナンバーカード たぶん今月届く
+  }
+  class ビジネスモデル {
+   + ...
+  }
+  class 環境 {
+   + オタク趣味
+   + - アニメ
+   + - 蒐集
+   + - 無形のものにお金を落とす
+   --
+   + JetBrainsのライセンス
+   + plantumlをリタルタイムにレンダリングできる環境
+  }
+  class 競合 {
+   + ...
+  }
+  class 外敵 {
+   + ...
+  }
+  class 問題 {
+   + 食パンがまずい
+   + プ譜を書き留めるのが億劫
+   + 朝起きたくない
+  }
+  note right of 問題::食パンがまずい
+  家計の友だがまずすぎてきつい
+  end note
+  note right of 問題::プ譜を書き留めるのが億劫
+  yamlで書けるようになったはよいが、
+  環境立ち上げから確認・commit・pushまでが億劫で続かない
+  end note
+  note right of 問題::朝起きたくない
+  布団の中で3時間くらいスマホいじいじしてしまった
+  end note
+}
+
+@enduml
