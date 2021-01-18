@@ -1,0 +1,78 @@
+@startuml
+
+title 家計
+
+hide empty members
+skinparam class {
+  BackgroundColor<<deprecated>> Grey
+  BackgroundColor<<done>> Cyan
+  BackgroundColor<<new>> Yellow
+}
+
+left to right direction
+
+
+package 勝利条件 {
+  class お金の不安がない
+}
+
+package 中間目的 {
+  class 何にいくら払っているか把握している
+  class 将来いついくらかかるか把握している
+  class 積立て計画が立っている
+
+  何にいくら払っているか把握している --> お金の不安がない
+  将来いついくらかかるか把握している --> お金の不安がない
+  積立て計画が立っている --> お金の不安がない
+}
+
+package 施策 {
+  class 家計簿をつける
+  家計簿をつける --> 何にいくら払っているか把握している
+
+  class 将来やりたいことを洗い出す
+  note bottom
+  プロジェクト「キャリア形成」にも跳ねる
+  わかっているもので大きいのは「経営情報学の大学に行く」
+  ほか高めの資格も
+  end note
+  将来やりたいことを洗い出す -> 将来いついくらかかるか把握している
+}
+
+package 廟算八要素 {
+  class メンバー {
+   + 自分
+  }
+  class 予算規模 {
+   + これからきめるやつ
+  }
+  class 納期 {
+   + これからきめるやつ
+  }
+  class ビジネスモデル {
+   + ...
+  }
+  class 環境 {
+   + 歯科
+   + 実家への仕送り
+   + 各種サブスクリプション
+   + 資格試験
+   + オタク趣味
+  }
+
+  class 競合 {
+   + ...
+  }
+  class 外敵 {
+   + ...
+  }
+  class 問題 {
+   + 各種サブスクリプションの管理ができていない
+  }
+}
+
+中間目的 --u[hidden]--> 勝利条件
+施策 --u[hidden]--> 中間目的
+廟算八要素 ---u[hidden]--> 施策
+
+@enduml
