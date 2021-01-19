@@ -1,0 +1,103 @@
+@startuml
+
+title 睡眠改善
+
+hide empty members
+skinparam class {
+  BackgroundColor<<deprecated>> Grey
+  BackgroundColor<<done>> Cyan
+  BackgroundColor<<new>> Yellow
+}
+
+left to right direction
+
+
+package 勝利条件 {
+  class 眠りが理想的である
+}
+
+package 中間目的 {
+  class 寝付きが良い
+  寝付きが良い --> 眠りが理想的である
+
+  class 寝起きがよい
+  寝起きがよい --> 眠りが理想的である
+
+  class 覚醒後布団から脱出できる
+  覚醒後布団から脱出できる --> 眠りが理想的である
+  寝起きがよい -> 覚醒後布団から脱出できる
+
+  class 日中眠くならない
+  日中眠くならない --> 眠りが理想的である
+}
+
+package 施策 {
+  class 睡眠の質を改善する
+  睡眠の質を改善する --> 寝起きがよい
+  睡眠の質を改善する --> 日中眠くならない
+
+  class 布団に入ったらスマホではなくkindleを見る
+  note bottom
+  いい感じな気がする。継続
+  end note
+  布団に入ったらスマホではなくkindleを見る -> 睡眠の質を改善する
+
+  class 寝る前に腹を減らさない
+  note bottom
+  寝る3-4時間前に豚肉を食べるのが腹持ち的にいい感じ
+  end note
+  寝る前に腹を減らさない -> 寝付きが良い
+  寝る前に腹を減らさない -> 寝起きがよい
+
+  class 朝一番にやることを目覚ましで読み上げる
+  note bottom
+  最近目覚ましが聞こえなくなってしまった。
+  アラームが静かすぎるか
+  end note
+  朝一番にやることを目覚ましで読み上げる --> 覚醒後布団から脱出できる
+
+  class 朝食を前日のうちに仕込んでおく
+  note bottom
+  「朝やるはずのこと」を忘れがちだが、朝食はさすがに忘れない。
+  フレンチトーストでうまく回っている。継続
+  end note
+  朝食を前日のうちに仕込んでおく --> 覚醒後布団から脱出できる
+}
+
+package 廟算八要素 {
+  class メンバー {
+   + 自分
+  }
+  class 予算規模 {
+   + ...
+  }
+  class 納期 {
+   + ...
+  }
+  class ビジネスモデル {
+   + ...
+  }
+  class 環境 {
+   + kindle
+   + サウナ
+  }
+
+  class 競合 {
+   + ...
+  }
+  class 外敵 {
+   + ...
+  }
+  class 問題 {
+   + 自律神経が壊れる
+  }
+  note right of 問題::自律神経が壊れる
+  定期的にサウナに通って立て直している
+  end note
+}
+
+中間目的 --u[hidden]--> 勝利条件
+施策 --u[hidden]--> 中間目的
+廟算八要素 ---u[hidden]--> 施策
+
+@enduml
