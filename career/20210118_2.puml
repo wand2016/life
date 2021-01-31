@@ -5,8 +5,11 @@ title キャリア形成
 hide empty members
 skinparam class {
   BackgroundColor<<deprecated>> Grey
+  BackgroundColor<<done>> Cyan
   BackgroundColor<<new>> Yellow
 }
+
+left to right direction
 
 package 勝利条件 {
   class キャリアの不安を感じない
@@ -16,12 +19,12 @@ package 中間目的 {
   経歴にPG以外を書くことができる --> キャリアの不安を感じない
 
   class PG以外の仕事の実績がある
-  PG以外の仕事の実績がある --> 経歴にPG以外を書くことができる
+  PG以外の仕事の実績がある -> 経歴にPG以外を書くことができる
 
   class PG以外の仕事の遂行能力がある
-  PG以外の仕事の遂行能力がある --> PG以外の仕事の実績がある
+  PG以外の仕事の遂行能力がある -> PG以外の仕事の実績がある
 
-  class 当座のフロントエンド案件で不安を感じない
+  class 当座のVue3案件で不安を感じない
   当座のVue3案件で不安を感じない --> キャリアの不安を感じない
 }
 

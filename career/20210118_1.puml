@@ -5,8 +5,11 @@ title キャリア形成
 hide empty members
 skinparam class {
   BackgroundColor<<deprecated>> Grey
+  BackgroundColor<<done>> Cyan
   BackgroundColor<<new>> Yellow
 }
+
+left to right direction
 
 package 勝利条件 {
   class キャリアの不安を感じない
